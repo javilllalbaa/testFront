@@ -1,0 +1,30 @@
+<div class="modal-header text-center">
+    <h4 class="modal-title w-100">Nueva Categoria</h4>
+</div>
+<div class="modal-body">
+    <div class="row">
+        <form class="col-12" [ngClass]="{ 'was-validated': newCategory.touched }" (ngSubmit)="onSubmit()" [formGroup]="newCategory" novalidate>
+        <!-- <form class="col-12" (ngSubmit)="onSubmit()" [formGroup]="newCategory"> -->
+            <div class="col-12">
+                <div class="mb-3">
+                    <label class="form-label">Ingrese el nombre {{newCategory.controls['name'].errors?.required}} </label>
+                    <input type="text" formControlName="name" class="form-control" placeholder="Ingrese el nombre" required>
+                    <div  *ngIf="newCategory.get('name').errors?.required" class="invalid-feedback">
+                        Campo requerido 
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label for="exampleFormControlTextarea1" class="form-label">Ingresa la descripción</label>
+                    <textarea class="form-control" formControlName="description" rows="3" required></textarea>
+                    <div *ngIf="newCategory.get('description').errors?.required" class="invalid-feedback">
+                        Campo requerido
+                    </div>
+                </div>
+            </div>
+            <button type="submit" [disabled]="!newCategory.valid" class="btn btn-primary btn-modal">Crear</button>
+        </form>
+    </div>
+</div>
+<div class="modal-footer">
+    <button type="button" class="btn btn-outline-dark" (click)="closeMyModal(false)">Close</button>
+</div>

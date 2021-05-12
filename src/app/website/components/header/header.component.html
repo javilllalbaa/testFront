@@ -1,0 +1,18 @@
+<div class="head center-vertical">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 col-xl-3">
+                <p>Nombre: {{ userData.name }}</p>
+            </div>
+            <div class="col-lg-12 col-xl-4">
+                <p>Correo: {{ userData.email }}</p>
+            </div>
+            <div class="col-lg-12 col-xl-3">
+                <p>Rol: {{ userData.username }}</p>
+            </div>
+            <div class="col-lg-12 col-xl-2">
+                <button (click)="shutDown()" type="button" class="btn btn-secondary">Salir</button>
+            </div>
+        </div>
+    </div>
+</div>

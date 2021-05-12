@@ -1,0 +1,38 @@
+/* You can add global styles to this file, and also import other style files */
+body{
+	background-color: #f8f8f8;
+	.center-vertical{
+		display: flex;
+		   justify-content: center;
+		   align-items: center;
+	}
+	.error{
+		position: absolute;
+		bottom: 50px;
+		right: 50px;
+	}
+	.success{
+		position: absolute;
+		bottom: 50px;
+		left: 50px;
+	}
+	.btn-modal{
+		width: 60%;
+		margin-left: 20%;
+		margin-right: 20%;
+	}
+	.msg-modal{
+		position: absolute;
+		top: 80px;
+		right: 50px;;
+	}
+	.btn-product{
+		position: absolute;
+		bottom: 60px;
+		right: 20px;
+	}
+}
+
+
+/* Importing Bootstrap SCSS file. */
+@import '~bootstrap/scss/bootstrap';

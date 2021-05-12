@@ -1,0 +1,58 @@
+.open{
+    height: 276px !important;
+    position: absolute;
+    z-index: 1;
+    background: #e9ebeb;
+    .btn{
+        bottom: 0px !important;
+    }
+}
+.card{
+    height: 180px;
+    overflow: hidden;
+    .icono{
+        text-align: center;
+        font-size: 40px;
+    }
+    .card-key{
+        font-size: 12px;
+        font-weight: bold;
+        padding: 0px;
+    }
+    .style-text{
+        width: 230px;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        overflow: hidden;
+    }
+    .card-value{
+        text-align: left;
+        margin-left: 0px;
+        font-size: 12px;
+        padding: 0px;
+        position: relative;
+        top: 2px;
+        p{
+            margin: 0;
+            padding: 0;
+        }
+    }
+    .btn{
+        text-align: center;
+        width: 100%;
+        position: relative;
+        background: #8a9199;
+        bottom: -15px;
+        color: white;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+    .btn-select{
+        background: #198754 !important;
+    }
+}
+@media (max-width: 425px) {
+    .card{
+        height: 244px;
+    }
+}

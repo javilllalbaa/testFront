@@ -1,0 +1,25 @@
+<!-- <div class="login"> -->
+<div class="m-0' vh-100 row justify-content-center align-items-center">
+    <div class="col-auto p-5 text-center login">
+        <form [ngClass]="{ 'was-validated': userLogin.touched }" (ngSubmit)="onSubmit()" [formGroup]="userLogin">
+            <div class="mb-3">
+                <label class="form-label">Ingrese su usuario</label>
+                <input type="text" class="form-control" formControlName="username" placeholder="Ingrese su usuario" required>
+                <div  *ngIf="userLogin.get('username').errors?.required" class="invalid-feedback">
+                    Campo requerido 
+                </div>
+            </div>
+            <div class="mb-3">
+                <label for="exampleInputPassword1" class="form-label">Ingrese su contraseña</label>
+                <input type="password" class="form-control" formControlName="password" placeholder="Ingrese su contraseña" required>
+                <div  *ngIf="userLogin.get('password').errors?.required" class="invalid-feedback">
+                    Campo requerido 
+                </div>
+            </div>
+            <button type="submit" [disabled]="!userLogin.valid" class="btn btn-primary">Submit</button>
+        </form>
+    </div>
+    <div *ngIf="msgAlert" class="alert alert-danger error" role="alert">
+        {{ msgAlert }}
+    </div>
+</div>

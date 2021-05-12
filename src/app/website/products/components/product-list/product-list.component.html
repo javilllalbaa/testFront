@@ -1,0 +1,18 @@
+<div class="contenedor">
+    <app-filter class="filter" (showProducts)="showProductsFilter($event)"></app-filter>
+    <div class="row list_card">
+        <div *ngFor="let product of products$ | async" class="col-sm-6 col-xl-4">
+            <app-product-card [product]="product" (productSeleted)="productSeletedShow($event)"></app-product-card>
+        </div>
+    </div>
+    <div >
+    <div *ngIf="category && create">
+        <button type="button" (click)="open()" class="btn btn-outline-primary btn-product">Crear producto</button>
+    </div>
+    <div *ngIf="textProduct" class="alert alert-success success" role="alert">
+        {{textProduct}}
+    </div>
+    <div *ngIf="statusFilter" class="alert alert-success error" role="alert">
+        No hay productos en esta categoria.
+    </div>
+</div>

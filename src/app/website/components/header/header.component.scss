@@ -1,0 +1,16 @@
+.head{
+    width: 100%;
+    text-align: center;
+    height: 70px;
+    background-color: #3380FF;      
+    p{
+        color: #fff;
+        font-size: 20px;
+        font-weight: bold;
+    }
+}
+@media (max-width: 960px) {
+    .head{
+        height: 100% !important;   
+    }
+}

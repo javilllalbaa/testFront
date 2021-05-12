@@ -1,0 +1,15 @@
+.contenedor{
+    width: calc(100% - 100px);
+    margin: 0 50px;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 0 2px 0 rgba(0, 0, 0, 0.5);
+    position: relative;
+}
+@media (max-width: 425px) {
+    .contenedor{
+        width: 100%;
+        margin: 0;
+        padding: 0;
+    }
+}

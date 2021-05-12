@@ -1,0 +1,22 @@
+<div class="row">
+  <div class="col-sm-12">
+    <form (ngSubmit)="onSubmit()" [formGroup]="selectProduct">
+      <div class="form-group">
+        <div class="row">
+          <div class="col-12 col-sm-12">
+            <label for="exampleFormControlSelect1">Seleccione el Categoria</label>
+            <input class="form-control" formControlName="category_select" (change)="categorySelect($event)"
+              list="datalistOptions" id="exampleDataList" placeholder="Type to search...">
+            <datalist id="datalistOptions">
+              <option *ngIf="create" vale="new">Agregar Categoria</option>
+              <option *ngFor="let category of categoryType$ | async">{{ category.name }}</option>
+            </datalist>
+          </div>
+        </div>
+      </div>
+    </form>
+    <div *ngIf="statusCategory" class="alert alert-success msg-modal" role="alert">
+      {{statusCategory}}
+    </div>
+  </div>
+</div>

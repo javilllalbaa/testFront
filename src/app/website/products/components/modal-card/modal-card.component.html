@@ -1,0 +1,44 @@
+<div class="modal-header text-center">
+    <h4 class="modal-title w-100">Nueva Producto</h4>
+</div>
+<div class="modal-body">
+    <div class="row">
+        <form class="col-12" [ngClass]="{ 'was-validated': newProduct.touched }" (ngSubmit)="onSubmit()" [formGroup]="newProduct" novalidate>
+        <!-- <form class="col-12" (ngSubmit)="onSubmit()" [formGroup]="newCategory"> -->
+            <div class="col-12">
+                <div class="mb-3">
+                    <label class="form-label">Ingrese el nombre </label>
+                    <input type="text" formControlName="name" class="form-control" placeholder="Ingrese el nombre" required>
+                    <div  *ngIf="newProduct.get('name').errors?.required" class="invalid-feedback">
+                        Campo requerido 
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label for="exampleFormControlTextarea1" class="form-label">Ingresa la descripción</label>
+                    <textarea class="form-control" formControlName="description" rows="3" required></textarea>
+                    <div *ngIf="newProduct.get('description').errors?.required" class="invalid-feedback">
+                        Campo requerido
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Ingrese el Precio</label>
+                    <input type="text" formControlName="price" class="form-control" placeholder="Ingrese el precio" required>
+                    <div  *ngIf="newProduct.get('price').errors?.required" class="invalid-feedback">
+                        Campo requerido 
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Ingrese el iva </label>
+                    <input type="text" formControlName="vat" class="form-control" placeholder="Ingrese el iva" required>
+                    <div  *ngIf="newProduct.get('vat').errors?.required" class="invalid-feedback">
+                        Campo requerido 
+                    </div>
+                </div>
+            </div>
+            <button type="submit" [disabled]="!newProduct.valid" class="btn btn-primary btn-modal">Crear</button>
+        </form>
+    </div>
+</div>
+<div class="modal-footer">
+    <button type="button" class="btn btn-outline-dark" (click)="closeMyModal(false)">Close</button>
+</div>
